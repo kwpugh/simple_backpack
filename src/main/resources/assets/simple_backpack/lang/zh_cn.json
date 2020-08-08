@@ -1,0 +1,12 @@
+{
+    "item.simple_backpack.backpack": "背包",
+    "container.simple_backpack.backpack": "普通的背包",
+
+    "item.simple_backpack.void_pack": "虚空背包",
+    "container.simple_backpack.void_pack": "注意！关闭界面后物品就会消失！",
+
+    "item.simple_backpack.ender_pack": "末影背包",
+    "container.simple_backpack.ender_pack": "随身携带的末影箱",
+
+    "itemGroup.simple_backpack.simple_backpack_group": "普通的背包 §6(Simple Backpack)"
+}

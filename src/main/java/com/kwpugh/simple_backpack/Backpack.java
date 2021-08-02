@@ -50,8 +50,9 @@ public class Backpack implements ModInitializer
             final ItemStack stack = buf.readItemStack();
             final Hand hand = buf.readInt() == 0 ? Hand.MAIN_HAND : Hand.OFF_HAND;
             final BackpackInventoryInterface inventory = BackpackItem.getInventory(stack, hand, player);
+            final String customTitle = buf.readString();
 
-            return new BackpackScreenHandler(syncId, player.getInventory(), inventory.getInventory(), inventory.getInventoryWidth(), inventory.getInventoryHeight(), hand);
+            return new BackpackScreenHandler(syncId, player.getInventory(), inventory.getInventory(), inventory.getInventoryWidth(), inventory.getInventoryHeight(), hand, customTitle);
         }));
 
         ContainerProviderRegistry.INSTANCE.registerFactory(VOID_PACK_IDENTIFIER, ((syncId, identifier, player, buf) -> {

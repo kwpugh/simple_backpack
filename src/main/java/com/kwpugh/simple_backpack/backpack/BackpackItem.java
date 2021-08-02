@@ -30,8 +30,10 @@ public class BackpackItem extends Item
         if(!world.isClient)
         {
             ContainerProviderRegistry.INSTANCE.openContainer(Backpack.BACKPACK_IDENTIFIER, user, buf -> {
-                buf.writeItemStack(user.getStackInHand(hand));
+                ItemStack stack = user.getStackInHand(hand);
+                buf.writeItemStack(stack);
                 buf.writeInt(hand == Hand.MAIN_HAND ? 0 : 1);
+                buf.writeString(stack.getName().asString());
             });
         }
 

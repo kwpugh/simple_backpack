@@ -7,6 +7,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -18,7 +19,7 @@ public class BackpackClientScreen extends HandledScreen<BackpackScreenHandler>
 
 	   public BackpackClientScreen(BackpackScreenHandler handler, PlayerInventory inventory, Text title)
 	   {
-	      super(handler, inventory, title);
+	      super(handler, inventory, handler.customTitle.isEmpty() ? title : new LiteralText(handler.customTitle));
 	      this.passEvents = false;
 	      this.rows = 6;
 	      this.backgroundHeight = 114 + this.rows * 18;

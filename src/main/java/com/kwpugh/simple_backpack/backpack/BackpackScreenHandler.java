@@ -18,16 +18,18 @@ public class BackpackScreenHandler extends ScreenHandler
     private final PlayerInventory playerInventory;
     public final int inventoryWidth;
     public final int inventoryHeight;
+    public final String customTitle;
 
     //private ItemStack backpack;
 
-    public BackpackScreenHandler(final int syncId, final PlayerInventory playerInventory, final Inventory inventory, final int inventoryWidth, final int inventoryHeight, final Hand hand)
+    public BackpackScreenHandler(final int syncId, final PlayerInventory playerInventory, final Inventory inventory, final int inventoryWidth, final int inventoryHeight, final Hand hand, String customTitle)
     {
         super(null, syncId);
         this.inventory = inventory;
         this.playerInventory = playerInventory;
         this.inventoryWidth = inventoryWidth;
         this.inventoryHeight = inventoryHeight;
+        this.customTitle = customTitle;
 
         checkSize(inventory, inventoryWidth * inventoryHeight);
         inventory.onOpen(playerInventory.player);

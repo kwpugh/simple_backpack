@@ -1,0 +1,13 @@
+{
+
+    "item.simple_backpack.backpack": "Рюкзак",
+    "container.simple_backpack.backpack": "Простой рюкзак",
+
+    "item.simple_backpack.void_pack": "Рюкзак пустоты",
+    "container.simple_backpack.void_pack": "ВНИМАНИЕ!!! ВСЕ ВЕЩИ БУДУТ УНИЧТОЖЕНЫ",
+
+    "item.simple_backpack.ender_pack": "Эндер рюкзак",
+    "container.simple_backpack.ender_pack": "Сундук Эндера на ходу",
+
+    "itemGroup.simple_backpack.simple_backpack_group": "Простой рюкзак"
+}

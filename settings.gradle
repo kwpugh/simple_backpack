@@ -1,6 +1,7 @@
 pluginManagement {
     repositories {
-        jcenter()
+        //jcenter()
+        mavenCentral()
         maven {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'

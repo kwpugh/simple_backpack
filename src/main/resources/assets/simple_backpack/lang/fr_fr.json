@@ -1,0 +1,35 @@
+{
+  "simplybackpacks.shift":"Appuyez sur <§6§oMAJ§r> pour info.",
+  "key.simplybackpacks.category":"Sacs à dos tout simplement",
+  "key.simplybackpacks.backpackpickup.desc":"Basculer le ramassage automatique",
+  "key.simplybackpacks.backpackopen.desc":"Ouvrir le sac à dos",
+
+  "simplybackpacks.autopickup":"Ramassage automatique",
+  "simplybackpacks.autopickupenabled":"Ramassage automatique : §aActivé§r",
+  "simplybackpacks.autopickupdisabled":"Ramassage automatique : §cDésactivé§r",
+
+  "simplybackpacks.whitelist":"Liste blanche",
+  "simplybackpacks.nbtdata":"NBT Tags",
+
+  "simplybackpacks.invaliduuid": "UUID inconnu",
+
+  "item.simplybackpacks.commonbackpack": "Sac à dos commun",
+  "item.simplybackpacks.commonbackpack.info":"Le sac à dos le plus simple.",
+  "item.simplybackpacks.commonbackpack.info2":"§fPeut contenir 18 piles§r",
+
+  "item.simplybackpacks.uncommonbackpack":"Sac à dos peu commun",
+  "item.simplybackpacks.uncommonbackpack.info":"Un sac à dos légèrement meilleur.",
+  "item.simplybackpacks.uncommonbackpack.info2":"§ePeut contenir 33 piles§r",
+
+  "item.simplybackpacks.rarebackpack":"Sac à dos peu rare",
+  "item.simplybackpacks.rarebackpack.info":"Un très bon sac à dos.",
+  "item.simplybackpacks.rarebackpack.info2":"§bPeut contenir 66 piles§r",
+
+  "item.simplybackpacks.epicbackpack":"Sac à dos peu épic",
+  "item.simplybackpacks.epicbackpack.info":"Un joli sac à dos épique.",
+  "item.simplybackpacks.epicbackpack.info2":"§dPeut contenir 99 piles§r",
+
+  "item.simplybackpacks.ultimatebackpack":"Sac à dos peu ultime",
+  "item.simplybackpacks.ultimatebackpack.info":"Le sac à dos ultime.",
+  "item.simplybackpacks.ultimatebackpack.info2":"§dPeut contenir 158 piles§r"
+}

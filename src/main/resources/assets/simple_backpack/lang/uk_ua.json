@@ -1,0 +1,25 @@
+{
+    "item.simple_backpack.backpack_new": "Тестовий рюкзак",
+    "container.simple_backpack.backpack_new": "Простий рюкзак",
+
+    "item.simple_backpack.backpack": "Рюкзак",
+    "container.simple_backpack.backpack": "Простий рюкзак",
+
+    "item.simple_backpack.void_pack": "Рюкзак порожнечі",
+    "container.simple_backpack.void_pack": "УВАГА!!! ПРЕДМЕТИ БУДУТЬ ВТРАЧЕНІ",
+
+    "item.simple_backpack.ender_pack": "Рюкзак Енду",
+    "container.simple_backpack.ender_pack": "Скриня Енду на ходу",
+
+    "item.simple_backpack.simple_bundle": "Простий мішечок",
+    "item.simple_backpack.simple_bundle.tip1": "Крастися + ПКМ, щоб скинути ВЕСЬ вміст на землю",
+
+    "item.simple_backpack.void_bundle": "Мішечок порожнечі",
+    "item.simple_backpack.void_bundle.tip1": "Мішечок для вашого сміття",
+    "item.simple_backpack.void_bundle.tip2": "Крастися + ПКМ, щоб знищити вміст",
+
+    "item.simple_backpack.portable_crafter": "Портативний верстак",
+    "container.simple_backpack.portable_crafter": "Майстрування на ходу",
+
+    "itemGroup.simple_backpack.simple_backpack_group": "Simple Backpack"
+}

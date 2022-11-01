@@ -1,12 +1,25 @@
 {
+  "item.simple_backpack.backpack_new": "Mochila de teste",
+  "container.simple_backpack.backpack_new": "Mochila Simples",
+
   "item.simple_backpack.backpack": "Mochila",
-  "container.simple_backpack.backpack": "Mochila padrão",
+  "container.simple_backpack.backpack": "Mochila Simples",
 
-  "item.simple_backpack.void_pack": "Mochila do vazio",
-  "container.simple_backpack.void_pack": "Atenção! Seus itens serão perdidos para sempre",
+  "item.simple_backpack.void_pack": "Pacote vazio",
+  "container.simple_backpack.void_pack": "AVISO!!! OS ITENS SERÃO PERDIDOS",
 
-  "item.simple_backpack.ender_pack": "Mochila de ender",
-  "container.simple_backpack.ender_pack": "Mochila especial",
+  "item.simple_backpack.ender_pack": "Pacote End",
+  "container.simple_backpack.ender_pack": "Enderches em movimento",
 
-  "itemGroup.simple_backpack.simple_backpack_group": "Mochila padrão"
+  "item.simple_backpack.simple_bundle": "Pacote Simples",
+  "item.simple_backpack.simple_bundle.tip1": "Sneak + clique com o botão direito do mouse para despejar TODO o conteúdo no chão",
+
+  "item.simple_backpack.void_bundle": "Pacote vazio",
+  "item.simple_backpack.void_bundle.tip1": "Um pacote para o seu lixo",
+  "item.simple_backpack.void_bundle.tip2": "Sneak + clique com o botão direito para destruir o conteúdo",
+
+  "item.simple_backpack.portable_crafter": "Crafter portátil",
+  "container.simple_backpack.portable_crafter": "Crafter em qualquer lugar",
+
+  "itemGroup.simple_backpack.simple_backpack_group": "Mochila Simples"
 }

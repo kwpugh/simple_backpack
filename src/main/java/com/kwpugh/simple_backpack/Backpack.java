@@ -26,10 +26,9 @@ import org.apache.logging.log4j.Logger;
 
 public class Backpack implements ModInitializer
 {
-    public static Logger LOGGER = LogManager.getLogger();
-
     public static final String MOD_ID = "simple_backpack";
     public static final String MOD_NAME = "SimpleBackpack";
+    public static Logger LOGGER = LogManager.getLogger(MOD_ID);
     public static final ModConfig CONFIG = AutoConfig.register(ModConfig.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new)).getConfig();
 
     public static final Identifier ENDER_PACK_IDENTIFIER = new Identifier(MOD_ID, "ender_pack");
@@ -48,9 +47,9 @@ public class Backpack implements ModInitializer
     @Override
     public void onInitialize()
     {
-        BACKPACK_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER, createID("backpack"), new ScreenHandlerType<>(BackpackScreenHandler::new));
-        VOID_PACK_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER, createID("void_pack"), new ScreenHandlerType<>(VoidpackScreenHandler::new));
-        PORTABLE_CRAFTING_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER, createID("portable_crafting"), new ScreenHandlerType<>(PortableCraftingScreenHandler::new));
+        BACKPACK_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER, createID("backpack"), new ScreenHandlerType<>(BackpackScreenHandler::new, null));
+        VOID_PACK_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER, createID("void_pack"), new ScreenHandlerType<>(VoidpackScreenHandler::new, null));
+        PORTABLE_CRAFTING_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER, createID("portable_crafting"), new ScreenHandlerType<>(PortableCraftingScreenHandler::new, null));
 
         Registry.register(Registries.ITEM, createID("backpack"), BACKPACK);
         Registry.register(Registries.ITEM, createID("void_pack"), VOID_PACK);

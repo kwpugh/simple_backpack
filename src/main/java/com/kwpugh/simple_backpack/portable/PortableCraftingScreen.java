@@ -39,7 +39,7 @@ public class PortableCraftingScreen extends HandledScreen<PortableCraftingScreen
         this.addDrawableChild(new TexturedButtonWidget(this.x + 5, this.height / 2 - 49, 20, 18, 0, 0, 19, RECIPE_BUTTON_TEXTURE, (button) -> {
             this.recipeBook.toggleOpen();
             this.x = this.recipeBook.findLeftEdge(this.width, this.backgroundWidth);
-            ((TexturedButtonWidget)button).setPos(this.x + 5, this.height / 2 - 49);
+            ((TexturedButtonWidget)button).setPosition(this.x + 5, this.height / 2 - 49);
         }));
         this.addSelectableChild(this.recipeBook);
         this.setInitialFocus(this.recipeBook);

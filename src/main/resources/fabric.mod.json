@@ -5,7 +5,8 @@
   "name": "SimpleBackpack",
   "description": "A simple backpack mod!",
   "authors": [
-    "kwpugh"
+    "kwpugh",
+    "sinclo"
   ],
   "contributors": [],
   "contact": {
@@ -13,7 +14,7 @@
     "sources": ""
   },
   "license": "MIT",
-  "icon": "assets/simple_backpack/textures/items/backpack.png",
+  "icon": "assets/simple_backpack/textures/item/backpack.png",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -28,8 +29,8 @@
     "simple_backpack.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.10",
-    "fabric": "*",
+    "fabricloader": ">=0.14.21",
+    "fabric-api": "*",
     "java": ">=17",
     "minecraft": "1.19.x"
   }

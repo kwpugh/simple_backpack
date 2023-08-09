@@ -15,7 +15,7 @@ public class SimpleBackpackGroup
 
     private static final ItemGroup SIMPLE_BACKUP_GROUP = FabricItemGroup.builder(new Identifier(Backpack.MOD_ID, "simple_backpack_group"))
             .icon(() -> new ItemStack(Backpack.BACKPACK))
-            .entries((enabledFeatures, entries, operatorEnabled) -> {
+            .entries((enabledFeatures, entries) -> {
                 entries.add(Backpack.BACKPACK);
                 entries.add(Backpack.VOID_PACK);
                 entries.add(Backpack.ENDER_PACK);

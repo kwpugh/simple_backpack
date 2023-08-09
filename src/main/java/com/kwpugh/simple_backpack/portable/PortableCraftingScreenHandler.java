@@ -16,6 +16,7 @@ import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeMatcher;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.book.RecipeBookCategory;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.screen.*;
 import net.minecraft.screen.slot.CraftingResultSlot;
 import net.minecraft.screen.slot.Slot;
@@ -74,12 +75,13 @@ public class PortableCraftingScreenHandler extends AbstractRecipeScreenHandler<C
     protected static void updateResult(ScreenHandler handler, World world, PlayerEntity player, CraftingInventory craftingInventory, CraftingResultInventory resultInventory) {
         if (!world.isClient) {
             ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity)player;
+            DynamicRegistryManager dynamicRegistryManager = DynamicRegistryManager.EMPTY;
             ItemStack itemStack = ItemStack.EMPTY;
             Optional<CraftingRecipe> optional = world.getServer().getRecipeManager().getFirstMatch(RecipeType.CRAFTING, craftingInventory, world);
             if (optional.isPresent()) {
                 CraftingRecipe craftingRecipe = (CraftingRecipe)optional.get();
                 if (resultInventory.shouldCraftRecipe(world, serverPlayerEntity, craftingRecipe)) {
-                    itemStack = craftingRecipe.craft(craftingInventory);
+                    itemStack = craftingRecipe.craft(craftingInventory, dynamicRegistryManager);
                 }
             }
 
@@ -108,8 +110,8 @@ public class PortableCraftingScreenHandler extends AbstractRecipeScreenHandler<C
         return recipe.matches(this.input, this.player.world);
     }
 
-    public void close(PlayerEntity player) {
-        super.close(player);
+    public void onClosed(PlayerEntity player) {
+        super.onClosed(player);
         this.context.run((world, pos) -> {
             this.dropInventory(player, this.input);
         });

@@ -148,9 +148,9 @@ public class VoidpackScreenHandler extends GenericContainerScreenHandler
     }
 
     @Override
-    public void close(PlayerEntity player)
+    public void onClosed(PlayerEntity player)
     {
-        super.close(player);
+        super.onClosed(player);
         this.inventory.onClose(player);
     }
 }

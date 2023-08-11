@@ -3,15 +3,14 @@ package com.kwpugh.simple_backpack.portable;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.screen.recipebook.RecipeBookProvider;
 import net.minecraft.client.gui.screen.recipebook.RecipeBookWidget;
 import net.minecraft.client.gui.widget.TexturedButtonWidget;
 import net.minecraft.client.render.GameRenderer;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.AbstractRecipeScreenHandler;
-import net.minecraft.screen.CraftingScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.text.Text;
@@ -51,29 +50,29 @@ public class PortableCraftingScreen extends HandledScreen<PortableCraftingScreen
         this.recipeBook.update();
     }
 
-    public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-        this.renderBackground(matrices);
+    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+        this.renderBackground(context);
         if (this.recipeBook.isOpen() && this.narrow) {
-            this.drawBackground(matrices, delta, mouseX, mouseY);
-            this.recipeBook.render(matrices, mouseX, mouseY, delta);
+            this.drawBackground(context, delta, mouseX, mouseY);
+            this.recipeBook.render(context, mouseX, mouseY, delta);
         } else {
-            this.recipeBook.render(matrices, mouseX, mouseY, delta);
-            super.render(matrices, mouseX, mouseY, delta);
-            this.recipeBook.drawGhostSlots(matrices, this.x, this.y, true, delta);
+            this.recipeBook.render(context, mouseX, mouseY, delta);
+            super.render(context, mouseX, mouseY, delta);
+            this.recipeBook.drawGhostSlots(context, this.x, this.y, true, delta);
         }
 
-        this.drawMouseoverTooltip(matrices, mouseX, mouseY);
-        this.recipeBook.drawTooltip(matrices, this.x, this.y, mouseX, mouseY);
+        this.drawMouseoverTooltip(context, mouseX, mouseY);
+        this.recipeBook.drawTooltip(context, this.x, this.y, mouseX, mouseY);
     }
 
-    protected void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY) {
+    protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
         //RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, TEXTURE);
         int i = this.x;
         int j = (this.height - this.backgroundHeight) / 2;
-        this.drawTexture(matrices, i, j, 0, 0, this.backgroundWidth, this.backgroundHeight);
+        context.drawTexture(TEXTURE, i, j, 0, 0, this.backgroundWidth, this.backgroundHeight);
     }
 
     protected boolean isPointWithinBounds(int x, int y, int width, int height, double pointX, double pointY) {

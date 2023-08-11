@@ -2,8 +2,6 @@ package com.kwpugh.simple_backpack.portable;
 
 import java.util.Optional;
 
-import com.kwpugh.simple_backpack.Backpack;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.CraftingInventory;
@@ -107,7 +105,7 @@ public class PortableCraftingScreenHandler extends AbstractRecipeScreenHandler<C
     }
 
     public boolean matches(Recipe<? super CraftingInventory> recipe) {
-        return recipe.matches(this.input, this.player.world);
+        return recipe.matches(this.input, this.player.getWorld());
     }
 
     public void onClosed(PlayerEntity player) {

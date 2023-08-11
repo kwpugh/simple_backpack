@@ -16,6 +16,7 @@ import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.item.Item;
+import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registries;
@@ -47,9 +48,9 @@ public class Backpack implements ModInitializer
     @Override
     public void onInitialize()
     {
-        BACKPACK_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER, createID("backpack"), new ScreenHandlerType<>(BackpackScreenHandler::new, null));
-        VOID_PACK_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER, createID("void_pack"), new ScreenHandlerType<>(VoidpackScreenHandler::new, null));
-        PORTABLE_CRAFTING_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER, createID("portable_crafting"), new ScreenHandlerType<>(PortableCraftingScreenHandler::new, null));
+        BACKPACK_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER, createID("backpack"), new ScreenHandlerType<>(BackpackScreenHandler::new, FeatureFlags.VANILLA_FEATURES));
+        VOID_PACK_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER, createID("void_pack"), new ScreenHandlerType<>(VoidpackScreenHandler::new, FeatureFlags.VANILLA_FEATURES));
+        PORTABLE_CRAFTING_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER, createID("portable_crafting"), new ScreenHandlerType<>(PortableCraftingScreenHandler::new, FeatureFlags.VANILLA_FEATURES));
 
         Registry.register(Registries.ITEM, createID("backpack"), BACKPACK);
         Registry.register(Registries.ITEM, createID("void_pack"), VOID_PACK);
